@@ -390,9 +390,303 @@ button[type="submit"]{
 .wafaa-email:hover{ text-decoration:underline; }
 </style>
 
+
+<style id="wafaa-final-visual-fixes">
+
+/* Header + centered logo */
+header{
+  background:#0B3156 !important;
+}
+.nav{
+  min-height:78px !important;
+  justify-content:space-between !important;
+}
+.center-brand-strip{
+  background:#0B3156;
+  padding:14px 16px 22px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-bottom:1px solid rgba(200,154,61,.18);
+}
+.center-brand-box{
+  width:min(510px,88vw);
+  min-height:112px;
+  background:#FFFFFF;
+  border:1px solid rgba(200,154,61,.42);
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;
+  box-shadow:0 15px 40px rgba(8,34,60,.18);
+}
+.center-brand-box img{
+  width:min(390px,78vw) !important;
+  height:80px !important;
+  object-fit:contain !important;
+}
+
+/* Dark sections: make headings readable */
+.about-box h3,
+.cta h2,
+.contact-card h2{
+  color:#FFFFFF !important;
+  text-shadow:0 2px 14px rgba(255,255,255,.05);
+}
+.about-box .eyebrow,
+.contact-card .eyebrow{
+  color:#E0B85C !important;
+}
+.about-box p,
+.cta p{
+  color:#F1ECE4 !important;
+}
+
+/* Clear contact card */
+.contact-card{
+  background:linear-gradient(145deg,#0B3156,#08243F) !important;
+  border:1px solid rgba(224,184,92,.30) !important;
+  box-shadow:0 24px 60px rgba(8,34,60,.24) !important;
+  padding:34px !important;
+}
+.contact-eyebrow{
+  color:#E0B85C !important;
+}
+.contact-card h2{
+  margin:8px 0 24px !important;
+  font-size:clamp(1.8rem,3vw,2.5rem) !important;
+}
+
+/* Phone/email glowing boxes */
+.contact-channel{
+  direction:ltr;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px 17px;
+  margin-top:14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(224,184,92,.28);
+  box-shadow:0 0 0 1px rgba(255,255,255,.02),0 10px 30px rgba(0,0,0,.12);
+  color:#fff !important;
+}
+.contact-channel::after{
+  content:"";
+  position:absolute;
+  top:-80%;
+  left:-35%;
+  width:34%;
+  height:260%;
+  transform:rotate(20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.52),transparent);
+  animation:contactShine 3.2s ease-in-out infinite;
+}
+.contact-channel-icon{
+  flex:0 0 48px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  color:#fff;
+  position:relative;
+  z-index:2;
+  animation:contactShake 2.8s ease-in-out infinite;
+}
+.whatsapp-icon{
+  background:#25D366;
+  box-shadow:0 0 24px rgba(37,211,102,.42);
+}
+.email-icon{
+  background:linear-gradient(135deg,#E0B85C,#C89A3D);
+  color:#08243F;
+  box-shadow:0 0 24px rgba(224,184,92,.40);
+}
+.contact-channel-text{
+  direction:rtl;
+  text-align:right;
+  position:relative;
+  z-index:2;
+  min-width:0;
+}
+.contact-channel-text small{
+  display:block;
+  color:#E0B85C !important;
+  font-weight:800;
+  margin-bottom:4px;
+}
+.contact-channel-text strong{
+  display:block;
+  color:#FFFFFF !important;
+  font-size:1.08rem;
+  overflow-wrap:anywhere;
+}
+
+/* Form clarity */
+.form{
+  background:#FFFFFF !important;
+  border:1px solid rgba(11,49,86,.18) !important;
+  box-shadow:0 20px 52px rgba(11,49,86,.08);
+}
+.field{
+  background:#F8F6F0;
+  border:1px solid rgba(11,49,86,.12);
+  border-radius:17px;
+  padding:12px;
+  margin-bottom:14px !important;
+}
+.field label{
+  color:#0B3156 !important;
+  font-weight:900 !important;
+  font-size:.96rem !important;
+}
+.field input,
+.field textarea,
+.field select{
+  background:#FFFFFF !important;
+  color:#172A3A !important;
+  border:1.5px solid rgba(200,154,61,.48) !important;
+  border-radius:12px !important;
+  min-height:48px;
+}
+.field textarea{min-height:130px}
+
+/* Glowing/shimmer buttons */
+.actions .btn,
+#callNowBtn,
+.wa{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  box-shadow:0 8px 24px rgba(200,154,61,.20),0 0 0 1px rgba(224,184,92,.12);
+  animation:buttonGlow 2.8s ease-in-out infinite;
+}
+.actions .btn::after,
+#callNowBtn::after,
+.wa::after{
+  content:"";
+  position:absolute;
+  inset:-60% auto -60% -45%;
+  width:34%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),transparent);
+  animation:buttonShine 3s ease-in-out infinite;
+  pointer-events:none;
+  z-index:-1;
+}
+.actions .btn.ghost{
+  color:#FFFFFF !important;
+  background:rgba(255,255,255,.08) !important;
+  border-color:rgba(224,184,92,.42) !important;
+}
+
+/* Footer */
+.footer{
+  background:linear-gradient(180deg,#0B3156,#071D33) !important;
+  padding:56px 0 26px !important;
+}
+.footer-premium{
+  display:grid;
+  grid-template-columns:1.2fr .9fr .8fr;
+  gap:36px;
+  align-items:start;
+}
+.footer-brand img{
+  width:min(300px,80vw) !important;
+  height:72px !important;
+  object-fit:contain !important;
+  background:#FFFFFF !important;
+  border-radius:15px !important;
+  padding:8px 12px !important;
+}
+.footer-brand p{
+  color:#DDE5EA !important;
+}
+.footer-links h4,
+.footer-contact h4{
+  color:#E0B85C !important;
+}
+.footer-links a,
+.footer-contact a,
+.footer-contact span{
+  color:#FFFFFF !important;
+  opacity:.9;
+}
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:#E0B85C !important;
+  opacity:1;
+}
+.footer-bottom{
+  border-top:1px solid rgba(224,184,92,.18) !important;
+  color:#C9D2D8 !important;
+}
+
+/* Animations */
+@keyframes contactShine{
+  0%,18%{left:-45%;opacity:0}
+  38%{opacity:1}
+  62%{left:120%;opacity:0}
+  100%{left:120%;opacity:0}
+}
+@keyframes contactShake{
+  0%,72%,100%{transform:rotate(0)}
+  76%{transform:rotate(-6deg) scale(1.03)}
+  80%{transform:rotate(6deg) scale(1.05)}
+  84%{transform:rotate(-4deg)}
+  88%{transform:rotate(4deg)}
+  92%{transform:rotate(0)}
+}
+@keyframes buttonGlow{
+  0%,100%{box-shadow:0 8px 24px rgba(200,154,61,.18),0 0 0 1px rgba(224,184,92,.12)}
+  50%{box-shadow:0 10px 34px rgba(224,184,92,.34),0 0 22px rgba(224,184,92,.18)}
+}
+@keyframes buttonShine{
+  0%,20%{left:-45%;opacity:0}
+  38%{opacity:1}
+  62%{left:125%;opacity:0}
+  100%{left:125%;opacity:0}
+}
+
+@media(max-width:820px){
+  .footer-premium{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr !important}
+  .center-brand-box{min-height:96px}
+  .center-brand-box img{height:66px !important}
+}
+@media(max-width:620px){
+  .nav{justify-content:center !important;flex-wrap:wrap;padding:10px 0}
+  nav{gap:12px;justify-content:center;flex-wrap:wrap}
+  .controls{width:100%;justify-content:center}
+  .grid2{grid-template-columns:1fr !important}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-channel::after,
+  .contact-channel-icon,
+  .actions .btn,
+  .actions .btn::after,
+  #callNowBtn,
+  #callNowBtn::after,
+  .wa,
+  .wa::after{
+    animation:none !important;
+  }
+}
+</style>
+
 </head>
 <body>
-<header><div class="container nav"><a class="brand" href="#home"><img id="brandLogo" src="wafaa-dues-logo.png" alt="مكتب وفاء المستحقات"><span class="brand-name-visible"><img src="favicon.png" alt="Wafaa Dues" class="brand-icon-small">مكتب وفاء المستحقات لتحصيل الديون</span></a><nav><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="#about" data-ar="من نحن" data-en="About">من نحن</a><a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a><a href="#process" data-ar="آلية العمل" data-en="Process">آلية العمل</a><a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></nav><div class="controls"><button class="lang" id="langBtn">EN</button><a class="wa" href="https://wa.me/966573893004" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a></div></div></header>
+<header><div class="container nav"><nav><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="#about" data-ar="من نحن" data-en="About">من نحن</a><a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a><a href="#process" data-ar="آلية العمل" data-en="Process">آلية العمل</a><a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></nav><div class="controls"><button class="lang" id="langBtn">EN</button><a class="wa" href="https://wa.me/966573893004" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a></div>
+</div></header>
+<div class="center-brand-strip" aria-label="Wafaa Dues">
+  <a href="#home" class="center-brand-box">
+    <img id="brandLogo" src="wafaa-dues-logo.png" alt="مكتب وفاء المستحقات لتحصيل الديون">
+  </a>
+</div>
 <main>
 <section class="hero" id="home"><div class="container hero-grid"><div><span class="kicker" data-ar="تحصيل الديون والخدمات العامة" data-en="Debt Collection & General Services">تحصيل الديون والخدمات العامة</span><h1 data-ar="متابعة احترافية للمستحقات <span>بوضوح وسرعة</span>" data-en="Professional receivables follow-up <span>with clarity and speed</span>">متابعة احترافية للمستحقات <span>بوضوح وسرعة</span></h1><p data-ar="نساعد الأفراد والمنشآت في متابعة الديون والمطالبات المالية، وإدارة التسويات الودية وجدولة السداد، مع متابعة مستمرة وخدمة منظمة ضمن نطاق الأعمال المتاحة." data-en="We help individuals and businesses follow up debts and financial claims, manage amicable settlements and payment scheduling, with structured communication and continuous follow-up.">نساعد الأفراد والمنشآت في متابعة الديون والمطالبات المالية، وإدارة التسويات الودية وجدولة السداد، مع متابعة مستمرة وخدمة منظمة ضمن نطاق الأعمال المتاحة.</p><div class="actions"><a class="btn gold" href="https://wa.me/966573893004" target="_blank" data-ar="تواصل عبر واتساب" data-en="Chat on WhatsApp">تواصل عبر واتساب</a><a class="btn ghost" href="#services" data-ar="استعرض الخدمات" data-en="Explore services">استعرض الخدمات</a></div></div><div class="hero-card"><div class="visual"><div class="orbit"></div><div class="folder"><div class="sheet"><i></i><i></i><i></i></div><div class="bars"><b></b><b></b><b></b><b></b></div></div></div></div></div></section>
 <div class="stats"><div class="container stats-grid"><div class="stat"><strong id="yearsCounter">1+</strong><span data-ar="سنة خبرة" data-en="Years of experience">سنة خبرة</span></div><div class="stat"><strong>4</strong><span data-ar="مسارات خدمة رئيسية" data-en="Core service tracks">مسارات خدمة رئيسية</span></div><div class="stat"><strong>24/7</strong><span data-ar="استقبال طلبات التواصل" data-en="Contact requests">استقبال طلبات التواصل</span></div><div class="stat"><strong>100%</strong><span data-ar="متابعة منظمة" data-en="Structured follow-up">متابعة منظمة</span></div></div></div>
@@ -407,7 +701,30 @@ button[type="submit"]{
 <p data-ar="يقدم مكتب وفاء المستحقات خدمات تحصيل الديون للأفراد والمنشآت، ومتابعة المطالبات المالية والأقساط، والتسويات الودية، وجدولة السداد، بالإضافة إلى الخدمات العامة ومتابعة المعاملات. نركز على المتابعة المنظمة، وسرعة التواصل، والوضوح في كل خطوة." data-en="Wafaa Dues Office provides debt collection for individuals and businesses, follow-up of financial claims and installments, amicable settlements, payment scheduling, general services, and transaction follow-up. We focus on organized follow-up, responsive communication, and clarity at every step.">يقدم مكتب وفاء المستحقات خدمات تحصيل الديون للأفراد والمنشآت، ومتابعة المطالبات المالية والأقساط، والتسويات الودية، وجدولة السداد، بالإضافة إلى الخدمات العامة ومتابعة المعاملات. نركز على المتابعة المنظمة، وسرعة التواصل، والوضوح في كل خطوة.</p>
 <div class="seo-keywords-grid"><span data-ar="تحصيل الديون" data-en="Debt Collection">تحصيل الديون</span><span data-ar="متابعة المطالبات المالية" data-en="Financial Claims Follow-up">متابعة المطالبات المالية</span><span data-ar="متابعة الأقساط" data-en="Installment Follow-up">متابعة الأقساط</span><span data-ar="التسويات الودية" data-en="Amicable Settlements">التسويات الودية</span><span data-ar="جدولة السداد" data-en="Payment Scheduling">جدولة السداد</span><span data-ar="الخدمات العامة" data-en="General Services">الخدمات العامة</span></div>
 </div></div></section>
-<section id="contact"><div class="container contact-grid"><div class="contact-card"><span class="eyebrow" style="color:var(--gold2)" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</span><h2 data-ar="ابدأ طلب المتابعة" data-en="Start your follow-up request">ابدأ طلب المتابعة</h2><div class="contact-item"><small data-ar="الهاتف / واتساب" data-en="Phone / WhatsApp">الهاتف / واتساب</small><strong dir="ltr">0573893004</strong></div><div class="contact-item"><small data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</small><strong dir="ltr">yasser.khoja@yahoo.com</strong></div></div><form class="form" id="contactForm"><div class="grid2"><div class="field"><label data-ar="الاسم" data-en="Name">الاسم</label><input id="name" required></div><div class="field"><label data-ar="رقم الجوال" data-en="Mobile">رقم الجوال</label><input id="phone" required dir="ltr"></div></div><div class="field">
+<section id="contact"><div class="container contact-grid"><div class="contact-card">
+<span class="eyebrow contact-eyebrow" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</span>
+<h2 data-ar="ابدأ طلب المتابعة" data-en="Start your follow-up request">ابدأ طلب المتابعة</h2>
+
+<a class="contact-channel contact-phone" href="https://wa.me/966573893004" target="_blank" rel="noopener">
+  <span class="contact-channel-icon whatsapp-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="27" height="27"><path fill="currentColor" d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.2-1.5A9.9 9.9 0 1 0 12 2Zm0 17.8a7.8 7.8 0 0 1-4-1.1l-.3-.2-3.1.9.9-3-.2-.3A7.8 7.8 0 1 1 12 19.8Zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.6-3.1-2.8-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3-.1-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.8.8-1.1 1.8-.8 2.8.4 1.7 1.6 3.2 3 4.3 1.8 1.5 4.1 2.6 5.7 2.1.7-.2 1.3-.8 1.5-1.5.2-.7.2-1.3.1-1.4-.2-.1-.5-.2-.7-.3Z"/></svg>
+  </span>
+  <span class="contact-channel-text">
+    <small data-ar="الهاتف / واتساب" data-en="Phone / WhatsApp">الهاتف / واتساب</small>
+    <strong dir="ltr">0573893004</strong>
+  </span>
+</a>
+
+<a class="contact-channel contact-email" href="mailto:info@wafaadues.com">
+  <span class="contact-channel-icon email-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="27" height="27"><path fill="currentColor" d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 7 8-5H4l8 5Zm0 2.3L4 9.2V17h16V9.2l-8 5.1Z"/></svg>
+  </span>
+  <span class="contact-channel-text">
+    <small data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</small>
+    <strong dir="ltr">info@wafaadues.com</strong>
+  </span>
+</a>
+</div><form class="form" id="contactForm"><div class="grid2"><div class="field"><label data-ar="الاسم" data-en="Name">الاسم</label><input id="name" required></div><div class="field"><label data-ar="رقم الجوال" data-en="Mobile">رقم الجوال</label><input id="phone" required dir="ltr"></div></div><div class="field">
 <label data-ar="نوع الطلب" data-en="Request type">نوع الطلب</label>
 <select id="type" required>
   <option value="" data-ar="اختر نوع الطلب" data-en="Choose request type">اختر نوع الطلب</option>
@@ -423,7 +740,40 @@ button[type="submit"]{
     </div>
 </form></div></section>
 </main>
-<footer><div class="container footer-row"><img id="footerLogo" src="wafaa-dues-logo.png" alt="مكتب وفاء المستحقات"><span data-ar="© 2026 مكتب وفاء المستحقات لتحصيل الديون" data-en="© 2026 Wafaa Dues Office for Debt Collection">© 2026 مكتب وفاء المستحقات لتحصيل الديون</span></div><div class="wafaa-email-wrap"><a class="wafaa-email" href="mailto:info@wafaadues.com" aria-label="البريد الإلكتروني">info@wafaadues.com</a></div></footer>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-premium">
+      <div class="footer-brand">
+        <img id="footerLogo" src="wafaa-dues-logo.png" alt="مكتب وفاء المستحقات لتحصيل الديون">
+        <p data-ar="مكتب وفاء المستحقات لتحصيل الديون يقدم خدمات متابعة وتحصيل منظمة للأفراد والمنشآت، مع وضوح في خطوات المتابعة وسرعة التواصل."
+           data-en="Wafaa Dues Office provides structured debt collection and receivables follow-up services for individuals and businesses, with clarity and responsive communication.">
+           مكتب وفاء المستحقات لتحصيل الديون يقدم خدمات متابعة وتحصيل منظمة للأفراد والمنشآت، مع وضوح في خطوات المتابعة وسرعة التواصل.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h4>
+        <a href="#services" data-ar="تحصيل الديون للأفراد والمنشآت" data-en="Debt collection for individuals & businesses">تحصيل الديون للأفراد والمنشآت</a>
+        <a href="#services" data-ar="متابعة الأقساط والمطالبات المالية" data-en="Installments & financial claims">متابعة الأقساط والمطالبات المالية</a>
+        <a href="#services" data-ar="التسويات الودية وجدولة السداد" data-en="Amicable settlements & payment scheduling">التسويات الودية وجدولة السداد</a>
+        <a href="#services" data-ar="الخدمات العامة ومتابعة المعاملات" data-en="General services & transaction follow-up">الخدمات العامة ومتابعة المعاملات</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4 data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</h4>
+        <a href="tel:+966573893004" dir="ltr">0573893004</a>
+        <a href="https://wa.me/966573893004" target="_blank" rel="noopener" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
+        <a href="mailto:info@wafaadues.com" dir="ltr">info@wafaadues.com</a>
+        <a href="#contact" data-ar="ابدأ طلب المتابعة" data-en="Start follow-up request">ابدأ طلب المتابعة</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-ar="© 2026 مكتب وفاء المستحقات لتحصيل الديون" data-en="© 2026 Wafaa Dues Office for Debt Collection">© 2026 مكتب وفاء المستحقات لتحصيل الديون</span>
+      <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span>
+    </div>
+  </div>
+</footer>
 <script>
 const LOGOS={ar:'wafaa-dues-logo.png',en:'wafaa-dues-logo.png'};let lang=localStorage.getItem('wafaa_lang')||'ar';const langBtn=document.getElementById('langBtn');function applyLang(l){lang=l;localStorage.setItem('wafaa_lang',l);document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.querySelectorAll('[data-ar][data-en]').forEach(el=>{const v=el.getAttribute('data-'+l);if(el.tagName==='H1')el.innerHTML=v;else el.textContent=v});document.getElementById('brandLogo').src=LOGOS[l];document.getElementById('footerLogo').src=LOGOS[l];langBtn.textContent=l==='ar'?'EN':'AR';document.title=l==='ar'?'مكتب وفاء المستحقات لتحصيل الديون':'Wafaa Dues Office for Debt Collection'}langBtn.addEventListener('click',()=>applyLang(lang==='ar'?'en':'ar'));applyLang(lang);
 let ran=false;const counter=document.getElementById('yearsCounter');const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting&&!ran){ran=true;let n=1;const t=setInterval(()=>{counter.textContent=n+'+';if(n>=20)clearInterval(t);n++},55)}},{threshold:.4});obs.observe(counter);
